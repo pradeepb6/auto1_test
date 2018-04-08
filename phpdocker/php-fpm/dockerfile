@@ -1,0 +1,23 @@
+FROM php:7.2-fpm
+
+RUN apt-get update
+
+RUN apt-get install -y zlib1g-dev libpq-dev git libicu-dev libxml2-dev sqlite3 \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl \
+    && docker-php-ext-install zip xml 
+
+RUN curl -sS https://getcomposer.org/installer | php \
+        && mv composer.phar /usr/local/bin/ \
+        && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+
+copy entrypoint.sh /entrypoint.sh
+RUN chown root:root /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+
+WORKDIR /var/www/symfony/backend
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["php-fpm"]

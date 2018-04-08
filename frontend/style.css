@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+}
+
+.col-4 {
+    width: 33%;
+    float: left;
+    display: flex;
+    height: 100%;
+}
+
+
+.dark {
+    background-color: grey;
+}
+
+.bakery-switch-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bakery-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bakery-top-container {
+    width: 0;
+    height: 0;
+    border-left: 252px solid transparent;
+    border-bottom: 200px solid black;
+    border-right: 252px solid transparent;
+}
+
+.bakery-top {
+    position: relative;
+    left: -248px;
+    width: 0;
+    height: 0;
+    border-left: 248px solid transparent;
+    border-bottom: 197px solid gray;
+    border-right: 248px solid transparent;
+    top: 2px;
+}
+
+.bakery-bottom-container {
+    width: 500px;
+    height: 300px;
+    background: gray;
+    border: 1px solid black;
+}
+
+.circle{
+    display: block;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.bakery-switch {
+    margin-top: 30px;
+    margin-left: 200px;
+    cursor: pointer;
+    background: yellow;
+}
+
+.bakery-window {
+    margin: 30px auto auto;
+    background: darkturquoise;
+    cursor: pointer;
+}
+
+.bakery-window:hover{
+    background: transparent url(https://greatamericancookies.s3.amazonaws.com/app/uploads/2015/10/MM-300x293.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.dark .bakery-window:hover {
+    cursor: auto;
+    background: darkturquoise;
+}
+
+.bakery-door{
+    display: block;
+    width: 130px;
+    border: 1px solid black;
+    height: 220px;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: pink;
+    cursor: pointer;
+}
+
+.no-order {
+    display: none;
+}
+
+.dark .bakery-door {
+    position: relative;
+    cursor: not-allowed;
+}
+
+.dark .no-order {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.dark .bakery-door:hover .no-order {
+    opacity: 1;
+}
+
+.dark .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.success {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}

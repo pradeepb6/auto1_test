@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id='app' :class='{ dark: isDark }'>
+    <div class='bakery-switch-container'>
+        <span @click="isDark = !isDark" class='circle bakery-switch'></span>
+    </div>
+
+    <div class='bakery-container'>
+        <div class="bakery">
+            <div class='bakery-top-container'>
+                <div class='bakery-top'></div>
+            </div>
+            <div class='bakery-bottom-container row'>
+                <div class="col-4">
+                    <span class='circle bakery-window'></span>
+                </div>
+                <div class='col-4'>
+                    <span @click="submitRequest" class='bakery-door'>
+                        <div v-if='orderSuccess' class="success">Ordered!</div>
+                        <div class="no-order">
+                            <div class="text">Sorry, We are closed!</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="col-4">
+                    <span class='circle bakery-window'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                isDark: false,
+                orderSuccess: false,
+                baseUrl: 'http://127.0.0.1:8080/'
+            }
+        },
+        methods: {
+            submitRequest: function () {
+                if (!this.isDark) {
+                    axios.post(this.baseUrl + 'order', {
+                        orderTime: Math.floor(Date.now() / 1000)
+                    }).then((response) => {
+                        if(response.status === 200){
+                            this.orderSuccess = true;
+                            setTimeout(() =>{
+                                this.orderSuccess = false;
+                            }, 1000);
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
