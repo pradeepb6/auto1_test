@@ -4,6 +4,8 @@ set -e
 
 cd /var/www/symfony/backend
 
+cp .env.dist .env
+
 composer install
 
 if [ ! -f /var/www/symfony/backend/var/bakery.db ]; then
