@@ -1,18 +1,22 @@
 body {
-     margin:0 
+     margin:0;
 }
  .col-4 {
      width:33%;
      float:left;
      display:flex;
-     height:100% 
+     height:100%;
 }
+
+[v-cloak] { display:none; }
+
  .dark {
-     background-color:grey 
+     min-height: 100vh;
+     background-color:grey;
 }
  .bakery-switch-container, .bakery-container {
      display:flex;
-     justify-content:center 
+     justify-content:center;
 }
 
  .bakery-top-container {
@@ -20,7 +24,7 @@ body {
      height:0;
      border-left:252px solid transparent;
      border-bottom:200px solid #000;
-     border-right:252px solid transparent 
+     border-right:252px solid transparent; 
 }
  .bakery-top {
      position:relative;
@@ -30,13 +34,13 @@ body {
      border-left:248px solid transparent;
      border-bottom:197px solid gray;
      border-right:248px solid transparent;
-     top:2px 
+     top:2px; 
 }
  .bakery-bottom-container {
      width:500px;
      height:300px;
      background:gray;
-     border:1px solid #000 
+     border:1px solid #000; 
 }
  .circle {
      display:block;
@@ -44,29 +48,29 @@ body {
      height:100px;
      -moz-border-radius:50%;
      -webkit-border-radius:50%;
-     border-radius:50% 
+     border-radius:50%; 
 }
  .bakery-switch {
      margin-top:30px;
      margin-left:200px;
      cursor:pointer;
-     background:#ff0 
+     background:#ff0; 
 }
  .bakery-window {
      margin:30px auto auto;
      background:#00ced1;
-     cursor:pointer 
+     cursor:pointer; 
 }
  .bakery-window:hover {
-     background:transparent url(https://greatamericancookies.s3.amazonaws.com/app/uploads/2015/10/MM-300x293.png);
+     background:transparent url(../images/cookie.png);
      -webkit-background-size:cover;
      -moz-background-size:cover;
      -o-background-size:cover;
-     background-size:cover 
+     background-size:cover; 
 }
  .dark .bakery-window:hover {
      cursor:auto;
-     background:#00ced1 
+     background:#00ced1; 
 }
  .bakery-door {
      display:block;
@@ -77,14 +81,14 @@ body {
      margin-left:auto;
      margin-right:auto;
      background-color:#ffc0cb;
-     cursor:pointer 
+     cursor:pointer; 
 }
  .no-order {
-     display:none 
+     display:none; 
 }
  .dark .bakery-door {
      position:relative;
-     cursor:not-allowed 
+     cursor:not-allowed;
 }
  .dark .no-order {
      display:block;
@@ -97,10 +101,10 @@ body {
      width:100%;
      opacity:0;
      transition:.5s ease;
-     background-color:#008CBA 
+     background-color:#008CBA;
 }
  .dark .bakery-door:hover .no-order {
-     opacity:1 
+     opacity:1; 
 }
  .dark .text {
      color:#fff;
@@ -113,11 +117,11 @@ body {
      -moz-transform:translate(-50%,-50%);
      -ms-transform:translate(-50%,-50%);
      -o-transform:translate(-50%,-50%);
-     text-align:center 
+     text-align:center; 
 }
  .success {
      padding:10px;
      text-align:center;
      font-weight:700;
-     color:green 
+     color:green; 
 }

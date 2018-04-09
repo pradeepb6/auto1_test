@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Bakery</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
 </head>
 <body>
-<div id='app' :class='{ dark: isDark }'>
+<div id='app' v-cloak :class='{ dark: isDark }'>
     <div class='bakery-switch-container'>
         <span @click="isDark = !isDark" class='circle bakery-switch'></span>
     </div>
@@ -36,8 +36,8 @@
     </div>
 </div>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/axios.min.js"></script>
 <script>
     new Vue({
         el: '#app',
