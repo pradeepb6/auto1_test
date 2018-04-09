@@ -1,143 +1,123 @@
-body{
-    margin: 0;
+body {
+     margin:0 
+}
+ .col-4 {
+     width:33%;
+     float:left;
+     display:flex;
+     height:100% 
+}
+ .dark {
+     background-color:grey 
+}
+ .bakery-switch-container, .bakery-container {
+     display:flex;
+     justify-content:center 
 }
 
-.col-4 {
-    width: 33%;
-    float: left;
-    display: flex;
-    height: 100%;
+ .bakery-top-container {
+     width:0;
+     height:0;
+     border-left:252px solid transparent;
+     border-bottom:200px solid #000;
+     border-right:252px solid transparent 
 }
-
-
-.dark {
-    background-color: grey;
+ .bakery-top {
+     position:relative;
+     left:-248px;
+     width:0;
+     height:0;
+     border-left:248px solid transparent;
+     border-bottom:197px solid gray;
+     border-right:248px solid transparent;
+     top:2px 
 }
-
-.bakery-switch-container {
-    display: flex;
-    justify-content: center;
+ .bakery-bottom-container {
+     width:500px;
+     height:300px;
+     background:gray;
+     border:1px solid #000 
 }
-
-.bakery-container {
-    display: flex;
-    justify-content: center;
+ .circle {
+     display:block;
+     width:100px;
+     height:100px;
+     -moz-border-radius:50%;
+     -webkit-border-radius:50%;
+     border-radius:50% 
 }
-
-.bakery-top-container {
-    width: 0;
-    height: 0;
-    border-left: 252px solid transparent;
-    border-bottom: 200px solid black;
-    border-right: 252px solid transparent;
+ .bakery-switch {
+     margin-top:30px;
+     margin-left:200px;
+     cursor:pointer;
+     background:#ff0 
 }
-
-.bakery-top {
-    position: relative;
-    left: -248px;
-    width: 0;
-    height: 0;
-    border-left: 248px solid transparent;
-    border-bottom: 197px solid gray;
-    border-right: 248px solid transparent;
-    top: 2px;
+ .bakery-window {
+     margin:30px auto auto;
+     background:#00ced1;
+     cursor:pointer 
 }
-
-.bakery-bottom-container {
-    width: 500px;
-    height: 300px;
-    background: gray;
-    border: 1px solid black;
+ .bakery-window:hover {
+     background:transparent url(https://greatamericancookies.s3.amazonaws.com/app/uploads/2015/10/MM-300x293.png);
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover 
 }
-
-.circle{
-    display: block;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+ .dark .bakery-window:hover {
+     cursor:auto;
+     background:#00ced1 
 }
-
-.bakery-switch {
-    margin-top: 30px;
-    margin-left: 200px;
-    cursor: pointer;
-    background: yellow;
+ .bakery-door {
+     display:block;
+     width:130px;
+     border:1px solid #000;
+     height:220px;
+     align-self:flex-end;
+     margin-left:auto;
+     margin-right:auto;
+     background-color:#ffc0cb;
+     cursor:pointer 
 }
-
-.bakery-window {
-    margin: 30px auto auto;
-    background: darkturquoise;
-    cursor: pointer;
+ .no-order {
+     display:none 
 }
-
-.bakery-window:hover{
-    background: transparent url(https://greatamericancookies.s3.amazonaws.com/app/uploads/2015/10/MM-300x293.png);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+ .dark .bakery-door {
+     position:relative;
+     cursor:not-allowed 
 }
-
-.dark .bakery-window:hover {
-    cursor: auto;
-    background: darkturquoise;
+ .dark .no-order {
+     display:block;
+     position:absolute;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     height:100%;
+     width:100%;
+     opacity:0;
+     transition:.5s ease;
+     background-color:#008CBA 
 }
-
-.bakery-door{
-    display: block;
-    width: 130px;
-    border: 1px solid black;
-    height: 220px;
-    align-self: flex-end;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: pink;
-    cursor: pointer;
+ .dark .bakery-door:hover .no-order {
+     opacity:1 
 }
-
-.no-order {
-    display: none;
+ .dark .text {
+     color:#fff;
+     font-size:20px;
+     position:absolute;
+     top:50%;
+     left:50%;
+     transform:translate(-50%,-50%);
+     -webkit-transform:translate(-50%,-50%);
+     -moz-transform:translate(-50%,-50%);
+     -ms-transform:translate(-50%,-50%);
+     -o-transform:translate(-50%,-50%);
+     text-align:center 
 }
-
-.dark .bakery-door {
-    position: relative;
-    cursor: not-allowed;
-}
-
-.dark .no-order {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-}
-
-.dark .bakery-door:hover .no-order {
-    opacity: 1;
-}
-
-.dark .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.success {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: green;
+ .success {
+     padding:10px;
+     text-align:center;
+     font-weight:700;
+     color:green 
 }
