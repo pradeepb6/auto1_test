@@ -5,4 +5,5 @@
 ```
     docker-compose up
 ```
-2. Go to frontend folder and open **index.html** file
+2. Open the browser and type ```http://127.0.0.1:8081/```
+
