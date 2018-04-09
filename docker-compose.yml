@@ -1,16 +1,23 @@
-version: '3'
+version: '2.0'
 
 services:
-    php-fpm:
+    php:
         build: phpdocker/php-fpm
         ports:
             - '9002:9000'
         volumes:
             - ./backend:/var/www/symfony/backend
 
-    nginx:
+    frontend:
+        build: phpdocker/frontend
+        ports:
+            - '8081:80'
+        volumes:
+            - ./frontend:/var/www/frontend
+    
+    backend:
         build: phpdocker/nginx
         ports:
             - '8080:80'
         links:
-            - php-fpm
+            - php

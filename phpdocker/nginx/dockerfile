@@ -1,3 +1,27 @@
-FROM nginx:latest
+# FROM nginx:latest
 
-COPY default.conf /etc/nginx/conf.d/
+# COPY backend.conf /etc/nginx/conf.d/
+
+# EXPOSE 80
+
+
+FROM debian:jessie
+
+LABEL PRADEEP <pradeepbaradur6@gmail.com>
+
+RUN apt-get update && apt-get install -y \
+    nginx nginx-extras
+
+ADD nginx.conf /etc/nginx/
+ADD backend.conf /etc/nginx/sites-available/
+
+RUN ln -s /etc/nginx/sites-available/backend.conf /etc/nginx/sites-enabled/backend
+RUN rm /etc/nginx/sites-enabled/default
+
+# RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
+
+RUN usermod -u 1000 www-data
+
+CMD ["nginx"]
+
+EXPOSE 80
