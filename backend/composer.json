@@ -9,7 +9,7 @@
         "nelmio/cors-bundle": "^1.5",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/console": "^4.0",
-        "symfony/flex": "^1.0",
+        "symfony/flex": "^1.0.89",
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
         "symfony/orm-pack": "^1.0",
